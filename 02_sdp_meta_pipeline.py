@@ -1,16 +1,14 @@
 # Databricks notebook source
-# MAGIC %md
-# MAGIC # SDP-META POC — 02 Generic pipeline
-# MAGIC
-# MAGIC Don't run this notebook interactively. It is the source code of the Lakeflow Declarative Pipeline.
-# MAGIC Every SDP-META pipeline uses these same two cells. What gets built is decided entirely by the
-# MAGIC DataflowSpec tables named in the pipeline's configuration (`layer`, `bronze.*`, `silver.*`).
-
-# COMMAND ----------
-
 # MAGIC %pip install databricks-labs-sdp-meta
 
 # COMMAND ----------
+
+# SDP-META POC — 02 Generic pipeline
+#
+# Don't run this notebook interactively. It is the source code of the Lakeflow Declarative Pipeline.
+# Every SDP-META pipeline uses this same code. What gets built is decided entirely by the
+# DataflowSpec tables named in the pipeline's configuration (layer, bronze.*, silver.*).
+# Note: %pip cells must be at the top of a pipeline notebook, so no markdown cell above them.
 
 layer = spark.conf.get("layer", None)
 
